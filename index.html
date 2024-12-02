@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Paper Trading Simulator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <button id="theme-toggle" onclick="toggleTheme()">🌙</button>
+            <h1>Stock Paper Trading Simulator</h1>
+        </div>
+        <div class="stock-info">
+            <div class="cash-info">
+                <h3>Cash Balance: <span id="cash">$1000.00</span></h3>
+                <h3>Total Balance: <span id="total-balance">$1000.00</span></h3>
+                <h3>Next Update in: <span id="time-left">5:00</span></h3>
+            </div>
+            <div class="stock">
+                <h2>Apple Stock (AAPL)</h2>
+                <p>Price: $<span id="apple-price">150.00</span></p>
+                <!-- Input field for number of shares -->
+                <input id="apple-shares" type="number" placeholder="Enter number of shares" min="1" step="1">
+                <button id="buy-button">Buy</button> <!-- Button for buying shares -->
+                <button onclick="sellStock('AAPL')">Sell</button>
+                <p>Investment: $<span id="apple-investment-value">0.00</span></p>
+                <p>Gain/Loss: $<span id="apple-gain-loss">0.00</span></p>
+                <p>Shares Owned: <span id="apple-shares-owned">0</span></p>
+            </div>
+        </div>
+        <canvas id="stock-chart" width="400" height="200"></canvas>
+        <div class="disclaimer">
+            <p>Disclaimer: Data updates every 5 minutes.</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        window.onload = () => {
+            startTimer(); // Start the countdown timer as soon as the page loads
+        };
+    </script>
+</body>
+</html>
