@@ -24,7 +24,7 @@
                 <h2>Apple Stock (AAPL)</h2>
                 <p>Price: $<span id="apple-price">150.00</span></p>
                 <input id="apple-shares" type="number" placeholder="Enter number of shares" min="1" step="1">
-                <button id="apple-buy-button">Buy</button>
+                <button id="apple-buy-button" onclick="buyStock('AAPL')">Buy</button>
                 <button onclick="sellStock('AAPL')">Sell</button>
                 <p>Investment: $<span id="apple-investment-value">0.00</span></p>
                 <p>Gain/Loss: $<span id="apple-gain-loss">0.00</span></p>
