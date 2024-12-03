@@ -14,9 +14,13 @@
             <h1>Stock Paper Trading Simulator</h1>
         </div>
         <div class="status-bar">
-            <p>Current Balance: $<span id="current-balance">1000.00</span></p>
-            <p>Total Value (Balance + Stocks): $<span id="total-value">1000.00</span></p>
-            <p>Next Update in: <span id="timer">05:00</span></p>
+            <div class="status-left">
+                <p>Current Balance: $<span id="current-balance">1000.00</span></p>
+                <p>Total Value (Balance + Stocks): $<span id="total-value">1000.00</span></p>
+            </div>
+            <div class="status-right">
+                <p>Next Update in: <span id="timer">05:00</span></p>
+            </div>
         </div>
         <div class="stock-info">
             <!-- Apple Stock -->
@@ -24,14 +28,60 @@
                 <h2>Apple Stock (AAPL)</h2>
                 <p>Price: $<span id="apple-price">150.00</span></p>
                 <input id="apple-shares" type="number" placeholder="Enter number of shares" min="1" step="1">
-                <button id="apple-buy-button" onclick="buyStock('AAPL')">Buy</button>
+                <button onclick="buyStock('AAPL')">Buy</button>
                 <button onclick="sellStock('AAPL')">Sell</button>
                 <p>Investment: $<span id="apple-investment-value">0.00</span></p>
                 <p>Gain/Loss: $<span id="apple-gain-loss">0.00</span></p>
                 <p>Shares Owned: <span id="apple-shares-owned">0</span></p>
             </div>
 
-            <!-- Repeat for other stocks (Nvidia, Google, Meta, Stock5) -->
+            <!-- Nvidia Stock -->
+            <div class="stock">
+                <h2>Nvidia Stock (NVDA)</h2>
+                <p>Price: $<span id="nvda-price">500.00</span></p>
+                <input id="nvda-shares" type="number" placeholder="Enter number of shares" min="1" step="1">
+                <button onclick="buyStock('NVDA')">Buy</button>
+                <button onclick="sellStock('NVDA')">Sell</button>
+                <p>Investment: $<span id="nvda-investment-value">0.00</span></p>
+                <p>Gain/Loss: $<span id="nvda-gain-loss">0.00</span></p>
+                <p>Shares Owned: <span id="nvda-shares-owned">0</span></p>
+            </div>
+
+            <!-- Google Stock -->
+            <div class="stock">
+                <h2>Google Stock (GOOGL)</h2>
+                <p>Price: $<span id="googl-price">2800.00</span></p>
+                <input id="googl-shares" type="number" placeholder="Enter number of shares" min="1" step="1">
+                <button onclick="buyStock('GOOGL')">Buy</button>
+                <button onclick="sellStock('GOOGL')">Sell</button>
+                <p>Investment: $<span id="googl-investment-value">0.00</span></p>
+                <p>Gain/Loss: $<span id="googl-gain-loss">0.00</span></p>
+                <p>Shares Owned: <span id="googl-shares-owned">0</span></p>
+            </div>
+
+            <!-- Meta Stock -->
+            <div class="stock">
+                <h2>Meta Stock (META)</h2>
+                <p>Price: $<span id="meta-price">350.00</span></p>
+                <input id="meta-shares" type="number" placeholder="Enter number of shares" min="1" step="1">
+                <button onclick="buyStock('META')">Buy</button>
+                <button onclick="sellStock('META')">Sell</button>
+                <p>Investment: $<span id="meta-investment-value">0.00</span></p>
+                <p>Gain/Loss: $<span id="meta-gain-loss">0.00</span></p>
+                <p>Shares Owned: <span id="meta-shares-owned">0</span></p>
+            </div>
+
+            <!-- Additional Stock (Stock5) -->
+            <div class="stock">
+                <h2>Stock 5 (STOCK5)</h2>
+                <p>Price: $<span id="stock5-price">100.00</span></p>
+                <input id="stock5-shares" type="number" placeholder="Enter number of shares" min="1" step="1">
+                <button onclick="buyStock('STOCK5')">Buy</button>
+                <button onclick="sellStock('STOCK5')">Sell</button>
+                <p>Investment: $<span id="stock5-investment-value">0.00</span></p>
+                <p>Gain/Loss: $<span id="stock5-gain-loss">0.00</span></p>
+                <p>Shares Owned: <span id="stock5-shares-owned">0</span></p>
+            </div>
         </div>
         <canvas id="stock-chart" width="400" height="200"></canvas>
         <div class="disclaimer">
