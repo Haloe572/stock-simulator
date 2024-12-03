@@ -25,10 +25,9 @@ function startTimer() {
 
 // Update stock prices every 5 minutes
 function updateStockPrices() {
-    // Here you'd fetch updated prices from the API
-    // For now, we're just simulating price changes
+    // Simulating price changes for demo purposes
     stockSymbols.forEach(symbol => {
-        stockPrices[symbol] = Math.round(Math.random() * 500 + 100); // Simulating a price change
+        stockPrices[symbol] = Math.round(Math.random() * 500 + 100); // Simulated price change
         document.getElementById(`${symbol.toLowerCase()}-price`).textContent = stockPrices[symbol].toFixed(2);
     });
     calculateTotalValue(); // Recalculate total value after price update
