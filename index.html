@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Paper Trading Simulator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <button id="theme-toggle" onclick="toggleTheme()">🌙</button>
+            <h1>Stock Paper Trading Simulator</h1>
+        </div>
+        <div class="stock-info">
+            <div class="cash-info">
+                <h3>Cash Balance: <span id="cash">$1000.00</span></h3>
+                <h3>Total Balance: <span id="total-balance">$1000.00</span></h3>
+                <h3>Next Update in: <span id="time-left">5:00</span></h3>
+            </div>
+
+           <!-- Apple Stock -->
+<div class="stock" id="stock-AAPL">
+    <h2>Apple Stock (AAPL)</h2>
+    <p>Price: $<span id="apple-price">150.00</span></p>
+    <input id="apple-shares" type="number" placeholder="Enter number of shares" min="1" step="1">
+    <button id="buy-button-AAPL">Buy</button> <!-- Added id to buy button -->
+    <button id="sell-button-AAPL">Sell</button> <!-- Correct id for Sell button -->
+
+    <p>Investment: $<span id="apple-investment-value">0.00</span></p>
+    <p>Gain/Loss: $<span id="apple-gain-loss">0.00</span></p>
+    <p>Shares Owned: <span id="apple-shares-owned">0</span></p>
+</div>
+
+
+            <!-- Microsoft Stock -->
+            <div class="stock" id="stock-MSFT">
+                <h2>Microsoft Stock (MSFT)</h2>
+                <p>Price: $<span id="msft-price">300.00</span></p>
+                <input id="msft-shares" type="number" placeholder="Enter number of shares" min="1" step="1">
+                <button id="buy-button-MSFT">Buy</button>
+                <button onclick="sellStock('MSFT')">Sell</button>
+                <p>Investment: $<span id="msft-investment-value">0.00</span></p>
+                <p>Gain/Loss: $<span id="msft-gain-loss">0.00</span></p>
+                <p>Shares Owned: <span id="msft-shares-owned">0</span></p>
+            </div>
+
+            <!-- New Stock 1: Tesla (TSLA) -->
+            <div class="stock" id="stock-TSLA">
+                <h2>Tesla Stock (TSLA)</h2>
+                <p>Price: $<span id="tsla-price">700.00</span></p>
+                <input id="tsla-shares" type="number" placeholder="Enter number of shares" min="1" step="1">
+                <button id="buy-button-TSLA">Buy</button>
+                <button onclick="sellStock('TSLA')">Sell</button>
+                <p>Investment: $<span id="tsla-investment-value">0.00</span></p>
+                <p>Gain/Loss: $<span id="tsla-gain-loss">0.00</span></p>
+                <p>Shares Owned: <span id="tsla-shares-owned">0</span></p>
+            </div>
+
+            <!-- New Stock 2: Amazon (AMZN) -->
+            <div class="stock" id="stock-AMZN">
+                <h2>Amazon Stock (AMZN)</h2>
+                <p>Price: $<span id="amzn-price">3500.00</span></p>
+                <input id="amzn-shares" type="number" placeholder="Enter number of shares" min="1" step="1">
+                <button id="buy-button-AMZN">Buy</button>
+                <button onclick="sellStock('AMZN')">Sell</button>
+                <p>Investment: $<span id="amzn-investment-value">0.00</span></p>
+                <p>Gain/Loss: $<span id="amzn-gain-loss">0.00</span></p>
+                <p>Shares Owned: <span id="amzn-shares-owned">0</span></p>
+            </div>
+
+        </div>
+        <canvas id="stock-chart" width="400" height="200"></canvas>
+        <div class="disclaimer">
+            <p>Disclaimer: Data updates every 5 minutes.</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        window.onload = () => {
+            startTimer(); // Start the countdown timer as soon as the page loads
+        };
+    </script>
+</body>
+</html>
